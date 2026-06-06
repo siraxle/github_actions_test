@@ -6,9 +6,17 @@ on:
             - completed
 
 jobs:
-    hello_command:
+    success_command:
         runs-on: ubuntu-latest
+        if: ${{github.event.workflow_run.conclusion == 'success'}}
         steps:
-            - name: List Files
-              run: echo "Hello !"
+            - name: Success
+              run: echo "Success"
+    failure_command:
+        runs-on: ubuntu-latest
+        if: ${{github.event.workflow_run.conclusion == 'failure'}}
+        steps:
+            - name: Failure
+              run: echo "Failure"
+
 
