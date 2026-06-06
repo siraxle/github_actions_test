@@ -1,0 +1,14 @@
+name: Forth Workflow
+on:
+    workflow_run:
+        workflows: [Third Workflow]
+        types:
+            - completed
+
+jobs:
+    hello_command:
+        runs-on: ubuntu-latest
+        steps:
+            - name: List Files
+              run: echo "Hello"
+
