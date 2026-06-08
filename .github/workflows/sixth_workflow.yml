@@ -10,4 +10,5 @@ jobs:
         steps:
             - name: Event Vars
               run: |
-                echo "Title: ${{ inputs.titleCustom }}"
+                echo $GITHUB_SHA
+                echo $GITHUB_REF
