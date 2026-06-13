@@ -1,6 +1,6 @@
-name: Tenth Workflow
+name: Ten Workflow
 on: 
-    [push]
+  [push]
 jobs:
     run_first_command:
         runs-on: ubuntu-latest
