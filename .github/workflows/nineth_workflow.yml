@@ -9,4 +9,4 @@ jobs:
             - name: Event Vars
               run: |
                 echo "Title: ${{ github.event.client_payload.titleTest }}"
-                echo "Test new comp 01"
+                echo "Test new comp test 01"
