@@ -1,0 +1,13 @@
+name: Twelveth Workflow
+on: [push]
+
+jobs:
+    run_first_command:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Our Vars & Secrets 
+              id: context-expressions
+              run: |
+                echo '${{ vars.STATUS }}'
+                echo '${{ secrets.PASSWORD }}'
+              
