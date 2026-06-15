@@ -4,6 +4,8 @@ on: [push]
 jobs:
     run_first_command:
         runs-on: ubuntu-latest
+        environment:
+            name: "production"
         steps:
             - name: Our Vars & Secrets 
               id: context-expressions
