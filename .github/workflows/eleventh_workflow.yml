@@ -12,6 +12,7 @@ jobs:
         steps:
             - name: Set New Var
               run: echo "JOB_CUSTOM_VAR=JOB 3" >> $GITHUB_ENV
+            - name: Context and Expressions  
               id: context-expressions
               run: |
                 echo '${{ toJson(github) }}'
