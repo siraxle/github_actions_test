@@ -10,6 +10,14 @@ jobs:
         env:
             JOB_CUSTOM_VAR: JOB 2
         steps:
+            - name: Set New Var
+              run: echo "JOB_CUSTOM_VAR=JOB 3" >> $GITHUB_ENV
+              id: context-expressions
+              run: |
+                echo '${{ toJson(github) }}'
+                echo '${{ toJson(runner) }}'
+                echo '${{ toJson(job) }}'
+                echo '${{ toJson(steps) }}'
             - name: Vars run_first_command
               env:
                   STEP_CUSTOM_VAR: JOB 3
@@ -22,6 +30,7 @@ jobs:
                 echo $JOB_CUSTOM_VAR
                 echo '${{ env.JOB_CUSTOM_VAR }}'
                 echo $STEP_CUSTOM_VAR
+                echo '${{ env.STEP_CUSTOM_VAR }}'
 
     another_job:
         runs-on: ubuntu-latest
